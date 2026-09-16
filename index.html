@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>Aura Pixel</title>
+  <link rel="stylesheet" href="styles.css?v=reset1">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">Aura Pixel</div>
+    <div class="top-actions">
+      <button id="newProjectBtn" type="button">Novo</button>
+      <button id="undoBtn" type="button">↶</button>
+      <button id="redoBtn" type="button">↷</button>
+      <button id="saveBtn" type="button">Salvar</button>
+      <button id="exportBtn" type="button">Exportar</button>
+      <button id="themeBtn" type="button">☾</button>
+    </div>
+  </header>
+
+  <main class="app">
+    <aside class="sidebar left">
+      <h3>Ferramentas</h3>
+      <div class="tools">
+        <button class="tool active" data-tool="pencil" type="button">✎ Lápis</button>
+        <button class="tool" data-tool="brush" type="button">● Pincel</button>
+        <button class="tool" data-tool="eraser" type="button">⌫ Borracha</button>
+      </div>
+      <h3>Cor</h3>
+      <input id="colorPicker" type="color" value="#ff6b6b" aria-label="Escolher cor">
+      <div class="swatches" id="palette"></div>
+      <h3>Tamanho</h3>
+      <div class="size-row">
+        <button class="size active" data-size="1" type="button">1</button>
+        <button class="size" data-size="2" type="button">2</button>
+        <button class="size" data-size="3" type="button">3</button>
+        <button class="size" data-size="4" type="button">4</button>
+      </div>
+    </aside>
+
+    <section class="workspace">
+      <div class="canvas-toolbar">
+        <span id="projectLabel">Aura Pixel</span>
+        <span id="gridLabel">32 × 32</span>
+        <button id="gridBtn" type="button">Grade</button>
+        <button id="zoomOut" type="button">−</button>
+        <span id="zoomLabel">16×</span>
+        <button id="zoomIn" type="button">+</button>
+      </div>
+      <div class="canvas-surface" id="canvasSurface">
+        <canvas id="pixelCanvas" width="32" height="32"></canvas>
+      </div>
+    </section>
+
+    <aside class="sidebar right">
+      <h3>Camadas</h3>
+      <div id="layers" class="layers"></div>
+      <div class="layer-actions">
+        <button id="addLayerBtn" type="button">+ Camada</button>
+        <button id="deleteLayerBtn" type="button">−</button>
+      </div>
+      <h3>Quadro</h3>
+      <div class="config">
+        <label>Largura <input id="widthInput" type="number" min="1" max="256" value="32"></label>
+        <label>Altura <input id="heightInput" type="number" min="1" max="256" value="32"></label>
+        <button id="resizeBtn" type="button">Aplicar tamanho</button>
+      </div>
+    </aside>
+  </main>
+
+  <section class="frames-panel">
+    <div class="frames-head"><strong>Frames</strong><button id="addFrameBtn" type="button">+ Frame</button></div>
+    <div id="frames" class="frames"></div>
+  </section>
+
+  <div id="toast" class="toast"></div>
+
+  <script src="app.js?v=reset1"></script>
+</body>
+</html>
